@@ -8,7 +8,7 @@ pipeline {
 
         stage('Build Maven') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GIT_REPO', url: 'https://github.com/devopshint/jenkins-nexus.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GIT_REPO', url: 'https://github.com/muni77-sh/DevOps.git']]])
 
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
                 
@@ -39,7 +39,7 @@ pipeline {
                             
                             protocol: 'http',
 
-                            nexusUrl: '18.118.211.58:8081',
+                            nexusUrl: '54.234.179.201:8081',
 
                             groupId: 'pom.com.mycompany.app',
 
